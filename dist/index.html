@@ -3,7 +3,11 @@
         <title>Vue.js Hello World</title>
     </head>
     <body>
-        <div id="app">{{ message }}</div>        
+        <div id="app">
+            <p>{{ message }} <span v-html="rawHtmlMessage"></span></p>
+            <p v-text="textMessage"></p>
+            <img v-bind:src="imageSrc">
+        </div>        
         <script src="bundle.js"></script>
     </body>
 </html>
