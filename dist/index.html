@@ -17,15 +17,22 @@
             
             <p>Deburred : {{ deburredMessage }}</p>
             
-            <button v-on:click="increment">Click me</button>
-            
-            <p>Vous avez cliqué {{ counter }} fois.</p>
+            <div>
+                <h2>Component example</h2>
+                <counter></counter>
+                <counter></counter>
+                <counter></counter>
+                <counter></counter>
+            </div>
 
-            <input v-model="itemToAdd" placeholder="Add item"><span><button v-on:click="addItem">Add item</button></span>
-            
-            <ul>
-                <li v-for="item in items">{{ item.label }}</li>
-            </ul>
+            <div>
+                <h2>Shopping List</h2>
+                <input v-model="itemToAdd" placeholder="Add item"><span><button v-on:click="addItem">Add item</button></span>
+                
+                <ul>
+                    <li v-for="item in items">{{ item.label }}</li>
+                </ul>
+            </div>
         </div>        
         <script src="bundle.js"></script>
     </body>
