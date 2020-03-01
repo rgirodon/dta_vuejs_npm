@@ -1,13 +1,12 @@
 export default {
-    data: function() {
-        return {
-            count: 0
-        }
+    props: { 
+        count : Number, 
+        increment : Number
     },
     methods: {
-        increment: function() {
-            this.count++;
+        incrementCount: function() {
+            this.count = this.count + this.increment;
         }
     },
-    template: '<button v-on:click="increment">You clicked me {{ count }} times.</button>'
+    template: '<button v-on:click="incrementCount">You clicked me {{ count }} times.</button>'
 }
