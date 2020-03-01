@@ -15,7 +15,9 @@ let vueInstance = new Vue({
             {id: 2, label: 'Peinture'},
             {id: 3, label: 'Plomberie'},
             {id: 4, label: 'Sols extérieur'},
-        ]
+        ],
+        itemToAdd: '',
+        maxItemId: 4
     },
     created: function() {
         console.log('Vue instance created');
@@ -36,6 +38,7 @@ let vueInstance = new Vue({
     },
     methods: {
         increment: function() {
+            
             this.counter++;
         },
         displayContent: function() {
@@ -45,6 +48,16 @@ let vueInstance = new Vue({
             console.log(this.randomNumber);
 
             return this.randomNumber % 2;
+        },
+        addItem: function() {
+
+            this.maxItemId++;
+
+            console.log(this.maxItemId);
+            
+            this.items.push({id : this.maxItemId, label : this.itemToAdd});
+
+            this.itemToAdd = '';
         }
     }
 });

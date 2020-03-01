@@ -6,19 +6,26 @@
     </head>
     <body>
         <div id="app">
-            <template v-if="displayContent()">
-                <p>{{ message }} <span v-html="rawHtmlMessage"></span></p>
-                <p v-text="textMessage"></p>
-                <img v-bind:src="imageSrc">
-                <p>Reversed : {{ reversedMessage }}</p>
-                <p>Deburred : {{ deburredMessage }}</p>
-                <button v-on:click="increment">Click me</button>
-                <p>Vous avez cliqué {{ counter }} fois.</p>
-                <ul>
-                    <li v-for="item in items">{{ item.label }}</li>
-                </ul>
-            </template>
-            <p v-else>{{ noContentMessage }}</p>
+
+            <p>{{ message }} <span v-html="rawHtmlMessage"></span></p>
+
+            <p v-text="textMessage"></p>
+            
+            <img v-bind:src="imageSrc">
+            
+            <p>Reversed : {{ reversedMessage }}</p>
+            
+            <p>Deburred : {{ deburredMessage }}</p>
+            
+            <button v-on:click="increment">Click me</button>
+            
+            <p>Vous avez cliqué {{ counter }} fois.</p>
+
+            <input v-model="itemToAdd" placeholder="Add item"><span><button v-on:click="addItem">Add item</button></span>
+            
+            <ul>
+                <li v-for="item in items">{{ item.label }}</li>
+            </ul>
         </div>        
         <script src="bundle.js"></script>
     </body>
