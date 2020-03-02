@@ -37,6 +37,8 @@ let store = new Vuex.Store({
     }
 });
 
+import './blueifyDirective';
+
 let vueInstance = new Vue({
     el: '#app',
     router: router,
