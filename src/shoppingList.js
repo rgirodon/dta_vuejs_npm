@@ -22,6 +22,9 @@ export default {
     },
     template:  `<div>
                     <h2>Shopping List {{ title }}</h2>
+                    <p>
+                        <slot></slot>
+                    </p>
                     <input v-model="itemToAdd" placeholder="Add item" @keyup.enter="addItem">
                     <span>
                         <button @click="addItem">Add item</button>
