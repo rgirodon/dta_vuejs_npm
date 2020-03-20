@@ -7,6 +7,9 @@ export default {
             maxItemId: 0
         }
     },
+    props : [
+        'title'
+    ],
     methods: {
         addItem: function() {
 
@@ -18,6 +21,7 @@ export default {
         }
     },
     template:  `<div>
+                    <h2>Shopping List {{ title }}</h2>
                     <input v-model="itemToAdd" placeholder="Add item" @keyup.enter="addItem">
                     <span>
                         <button @click="addItem">Add item</button>
