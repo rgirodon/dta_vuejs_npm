@@ -1,16 +1,13 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router'
+import VueRouter from 'vue-router';
 import counter from './counter';
 import shopping from './shopping';
 
-Vue.component('counter', counter);
-Vue.component('shopping', shopping);
-
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 let routes = [
     { path: '/counter', component: counter },
-    { path: '/shopping', component: shopping }
+    { path: '/shopping/:title', component: shopping, props: true }
 ];
 
 let router = new VueRouter({

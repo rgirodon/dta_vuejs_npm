@@ -5,6 +5,7 @@ export default {
             itemToAdd : ''
         };
     },
+    props: ['title'],
     methods: {
         addItem: function() {
             
@@ -14,7 +15,7 @@ export default {
         }
     },
     template: `<div>
-                    <h2>Shopping List</h2>
+                    <h2>Shopping List {{ title }}</h2>
                     <input v-model="itemToAdd" placeholder="Add item"><span><button v-on:click="addItem">Add item</button></span>
                     
                     <ul>
@@ -27,4 +28,9 @@ export default {
     mounted: function() {
         console.log('Shopping instance mounted');
     },
+    watch: {
+        title: function(to, from) {
+            this.items = [];
+        }
+    }
 }
