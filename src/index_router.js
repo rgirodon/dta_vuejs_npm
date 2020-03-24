@@ -13,7 +13,7 @@ Vue.use(Vuex);
 
 let routes = [
     { path: '/counter', component: counter },
-    { path: '/shopping', component: shopping }
+    { path: '/shopping/:type', component: shopping, props: true }
 ];
 
 let router = new VueRouter({
@@ -23,7 +23,8 @@ let router = new VueRouter({
 let store = new Vuex.Store({
     state: {
         count: 0,
-        items: []
+        epicerieItems: [],
+        bricolageItems: []
     },
     mutations: {
         increment: function(state) {
@@ -32,7 +33,14 @@ let store = new Vuex.Store({
         },
         addItem: function(state, payload) {
             
-            state.items.push({label : payload.itemToAdd});
+            if (payload.type == 'epicerie') {
+            
+                state.epicerieItems.push({label : payload.itemToAdd});
+            }
+            else if (payload.type == 'bricolage') {
+            
+                state.bricolageItems.push({label : payload.itemToAdd});
+            }
         }
     }
 });

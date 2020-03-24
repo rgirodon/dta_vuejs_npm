@@ -4,15 +4,23 @@ export default {
             itemToAdd : ''
         };
     },
+    props: ['type'],
     computed: {
         items: function() {
-            return this.$store.state.items;
+            if (this.type == 'epicerie') {
+            
+                return this.$store.state.epicerieItems;
+            }
+            else if (this.type == 'bricolage') {
+
+                return this.$store.state.bricolageItems;
+            }
         }
     },
     methods: {
         addItem: function() {
             
-            this.$store.commit('addItem', { itemToAdd: this.itemToAdd });
+            this.$store.commit('addItem', { itemToAdd: this.itemToAdd, type: this.type });
 
             this.itemToAdd = '';
         }
@@ -30,5 +38,5 @@ export default {
     },
     mounted: function() {
         console.log('Shopping instance mounted');
-    },
+    }
 }
