@@ -1,10 +1,18 @@
 import Vue from 'vue';
+import _ from 'lodash';
 
 let vueInstance = new Vue({
     el: '#app',
     data: {
         message: 'Hello from TSE !',
-        counter: 0
+        counter: 0,
+        randomNumber: 1,
+        items: [
+            {id: 1, label: 'Sols intérieur'},
+            {id: 2, label: 'Peinture'},
+            {id: 3, label: 'Plomberie'},
+            {id: 4, label: 'Sols extérieur'},
+        ]
     },
     computed: {
         reversedMessage: function() {
@@ -14,6 +22,14 @@ let vueInstance = new Vue({
     methods: {
         increment: function() {
             this.counter++;
+        },
+        displayContent: function() {
+
+            this.randomNumber = _.random(1, 10);
+
+            console.log(this.randomNumber);
+
+            return (this.randomNumber % 2 == 0);
         }
     }
 });

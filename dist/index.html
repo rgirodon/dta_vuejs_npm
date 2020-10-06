@@ -8,6 +8,11 @@
             <p>Reversed : {{ reversedMessage }}</p>
             <button v-on:click="increment">Click me</button>
             <p>Vous avez cliqué {{ counter }} fois.</p>
+            <p v-if="displayContent()">Le nombre généré était pair ! ({{ randomNumber }})</p>
+            <p v-else>Le nombre généré était impair ! ({{ randomNumber }})</p>
+            <ul>
+                <li v-for="item in items">{{ item.label }}</li>
+            </ul>
         </div>        
         <script src="bundle.js"></script>
     </body>
