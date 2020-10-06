@@ -1,5 +1,8 @@
 import Vue from 'vue';
 import _ from 'lodash';
+import counter from './counter';
+
+Vue.component('counter', counter);
 
 let vueInstance = new Vue({
     el: '#app',
