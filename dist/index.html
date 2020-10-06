@@ -3,7 +3,12 @@
         <title>Vue.js Hello World</title>
     </head>
     <body>
-        <div id="app">{{ message }}</div>        
+        <div id="app">
+            <p>{{ message }}</p>
+            <p>Reversed : {{ reversedMessage }}</p>
+            <button v-on:click="increment">Click me</button>
+            <p>Vous avez cliqué {{ counter }} fois.</p>
+        </div>        
         <script src="bundle.js"></script>
     </body>
 </html>
