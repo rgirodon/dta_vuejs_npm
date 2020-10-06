@@ -10,9 +10,10 @@
             <p>Vous avez cliqué {{ counter }} fois.</p>
             <p v-if="displayContent()">Le nombre généré était pair ! ({{ randomNumber }})</p>
             <p v-else>Le nombre généré était impair ! ({{ randomNumber }})</p>
+            <input v-model="itemToAdd" placeholder="Add item"><span><button v-on:click="addItem">Add item</button></span>
             <ul>
                 <li v-for="item in items">{{ item.label }}</li>
-            </ul>
+            </ul>            
         </div>        
         <script src="bundle.js"></script>
     </body>
