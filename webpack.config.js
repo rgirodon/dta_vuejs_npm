@@ -2,10 +2,13 @@ const webpack = require("webpack");
 const path = require("path");
 
 let config = {
-    entry: "./src/index.js",
+    entry: {
+      bundle : "./src/index.js",
+      bundle_router : "./src/index_router.js"
+    },
     output: {
       path: path.resolve(__dirname, "dist"),
-      filename: "bundle.js"
+      filename: "[name].js"
     },
     resolve: {
         alias: {
