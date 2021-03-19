@@ -1,14 +1,18 @@
 export default {
     data: function() { 
         return {
-            items : [],
             itemToAdd : ''
         };
+    },
+    computed: {
+        items: function() {
+            return this.$store.state.items;
+        }
     },
     methods: {
         addItem: function() {
             
-            this.items.push({label : this.itemToAdd});
+            this.$store.commit('addItem', { itemToAdd: this.itemToAdd });
 
             this.itemToAdd = '';
         }
