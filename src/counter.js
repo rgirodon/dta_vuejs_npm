@@ -10,3 +10,4 @@ export default {
     },
     template: '<button v-on:click="incrementCount">You clicked me {{ count }} times.</button>'
 }
+

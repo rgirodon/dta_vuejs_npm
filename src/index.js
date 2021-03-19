@@ -1,8 +1,24 @@
 import Vue from 'vue';
 import _ from 'lodash';
+
 import counter from './counter';
 
 Vue.component('counter', counter);
+
+let localComponent = {
+    data: function() {
+        return { 
+            count : 0, 
+            increment : 5
+        };
+    },
+    methods: {
+        incrementCount: function() {
+            this.count = this.count + this.increment;
+        }
+    },
+    template: '<button v-on:click="incrementCount">[Local] You clicked me {{ count }} times.</button>'
+};
 
 let vueInstance = new Vue({
     el: '#app',
@@ -46,5 +62,8 @@ let vueInstance = new Vue({
 
             this.itemToAdd = '';
         }
+    },
+    components : {
+        'local-counter': localComponent
     }
 });
